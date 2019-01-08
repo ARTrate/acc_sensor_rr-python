@@ -72,10 +72,11 @@ class Visualization(object):
         ax[0].legend(loc='best', fontsize=9)
         ax[0].set_title("Bandpass filtered signals for X,Y,Z", fontsize="medium")
         # plotting the spectrum
-        ax[1].plot(frq,  2.0/N * np.abs(y_x[0:N/2]), 'r', label='Power spectrum X')
-        ax[1].plot(frq, 2.0/N * np.abs(y_y[0:N/2]), 'b', label='Power spectrum Y')
-        ax[1].plot(frq, 2.0/N * np.abs(y_z[0:N/2]), 'g', label='Power spectrum Z')
-        ax[1].plot(frq, 2.0/N * np.abs(y_max[0:N/2]), 'y', label='Maximum Power spectrum')
+        half_N = int(N/2)
+        ax[1].plot(frq,  2.0/N * np.abs(y_x[0:half_N]), 'r', label='Power spectrum X')
+        ax[1].plot(frq, 2.0/N * np.abs(y_y[0:half_N]), 'b', label='Power spectrum Y')
+        ax[1].plot(frq, 2.0/N * np.abs(y_z[0:half_N]), 'g', label='Power spectrum Z')
+        ax[1].plot(frq, 2.0/N * np.abs(y_max[0:half_N]), 'y', label='Maximum Power spectrum')
         ax[1].plot(peak_tupel[0], peak_tupel[1], 'rx', label='Peak')
 
         #ax[1].text(0.8, 0, 'RR = %d' % rr)

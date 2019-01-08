@@ -4,9 +4,9 @@ import os
 
 import matplotlib.pyplot as plt
 
-from Code import ImportCsv
-from Code import Signalprocessing
-from Code import Visualization
+from ImportCsv import ImportCsv
+from Signalprocessing import Signalprocessing
+from Visualization import Visualization
 
 SAMPLE_RATE = 50
 LOW_CUT = 0.2
@@ -16,8 +16,8 @@ HIGH_CUT = 0.45
 class Main(object):
 
     import_csv = None
-    visualization = Visualization.Visualization()
-    signalprocessing = Signalprocessing.Signalprocessing()
+    visualization = Visualization()
+    signalprocessing = Signalprocessing()
 
     def initialize_import(self):
 
@@ -26,7 +26,7 @@ class Main(object):
 
         filename = os.path.join(directory, '../files/case1.csv')
 
-        import_csv = ImportCsv.ImportCsv(filename)
+        import_csv = ImportCsv(filename)
         raw_data_array = import_csv.import_csv()
 
         #visualization.visualise_raw_data_combined(raw_data_array)

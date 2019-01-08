@@ -97,7 +97,8 @@ class Signalprocessing(object):
         :return: positive power of the spectrum
         """
         N = power_spectrum.size
-        positive_power = 2.0 / N * np.abs(power_spectrum[0:N / 2])
+        half_N = int(N/2)
+        positive_power = 2.0 / N * np.abs(power_spectrum[0:half_N])
 
         return positive_power
 
