@@ -21,8 +21,8 @@ class ImportCsv(object):
         """
         # @todo check for format - write test
 
-        datefunc = lambda x: datetime.strptime(x.decode("utf-8"), '%Y/%m/%d %H:%M:%S.%f')
-        raw_data_array = np.genfromtxt(self.path, converters={0: datefunc}, dtype=None, delimiter=",", names=True)
+        # datefunc = lambda x: datetime.strptime(x.decode("utf-8"), '%Y/%m/%d %H:%M:%S.%f')
+        raw_data_array = np.genfromtxt(self.path, dtype=None, delimiter=",", names=True)
 
         return raw_data_array
 
